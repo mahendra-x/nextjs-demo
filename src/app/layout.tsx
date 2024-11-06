@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Navigation } from "./components/navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="flex justify-center items-center bg-slate-900 text-white p-4">
+          {/* Welcome to Next.js 15 */}
+          <Navigation/>
+        </header>
         {children}
+        <footer className="flex justify-center items-center bg-slate-900 text-white p-4">Footer section of Next js 15</footer>
       </body>
     </html>
   );
